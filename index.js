@@ -6,18 +6,14 @@ function initTimer(targetDate) {
   const now = new Date().getTime();
   let target = targetDate.getTime();  
   currentTargetTimestamp = target;
-  
   if (flipdown) {
     flipdown.destroy();
   }
-  
   const tsSeconds = Math.floor(target / 1000);
-  
   flipdown = new FlipDown(tsSeconds, 'flipdown', {
     headings: ["Days", "Hours", "Minutes", "Seconds"],
     showDays: true
   });
-  
   flipdown.start(); 
 }
 function startTimerFromSequence() {
